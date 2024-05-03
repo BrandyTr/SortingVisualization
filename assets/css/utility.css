@@ -1,0 +1,29 @@
+html {
+    font-family: 'Montserrat', sans-serif;
+}
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    color: var(--blue);
+}
+
+a {
+    text-decoration: none;
+    color: var(--nearly-white);
+}
+.navbar-nav .nav-item {
+    list-style-type: none;
+}
+
+.container {
+    max-width: 1320px;
+    padding: 0 1rem;
+    margin: 0 auto;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

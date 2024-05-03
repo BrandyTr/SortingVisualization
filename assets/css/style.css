@@ -1,0 +1,25 @@
+:root{
+    --black-blue: #012840;
+    --blue: #0367A6;
+    --sky-blue: #3F9BBF;
+    --light-blue: #C9E2F2;
+    --nearly-white: #F4F4F4;
+}
+
+.navbar{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--black-blue);
+    padding: 1rem 0;
+    z-index: 999;
+}
+
+.navbar .container {
+    justify-content: space-between;
+}
+
+.site-brand {
+    color: var(--nearly-white);
+}
+
