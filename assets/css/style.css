@@ -130,3 +130,25 @@ header {
     /* display: block; */
 }
 
+/* CONTENT */
+#content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins';
+    line-height: 1.6;
+}
+
+#content #about-content {
+    max-width: 1000px;
+    padding: 30px;
+}
+
+#content p, ul {
+    text-align: justify; /* Justify text alignment */
+    /* margin: 10px 0; */
+}
+
+#content ul {
+    padding-left: 50px;
+}
