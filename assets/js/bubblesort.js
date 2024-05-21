@@ -28,7 +28,7 @@ function generateArray() {
 
         // Adding style to div
         array_ele.style.height = `${value * 3}px`;
-        array_ele.style.transform = `translate(${i * 30}px)`; // Translate the element
+        array_ele.style.transform = `translate(${i * 33}px)`; // Translate the element
 
 
         // Create label in front of block
