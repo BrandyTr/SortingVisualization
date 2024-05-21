@@ -140,7 +140,7 @@ header {
 }
 
 #content #about-content {
-    max-width: 1000px;
+    max-width: 800px;
     padding: 30px;
 }
 
@@ -151,4 +151,57 @@ header {
 
 #content ul {
     padding-left: 50px;
+}
+
+/* SORTING */
+#sort-section {
+    max-width: 800px;
+    margin-top: 4rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 30px;
+    background-color: var(--light-blue);
+}
+
+#sort-section .header_sortname {
+    position: relative;
+    display: flex;
+    top: 0;
+    height: 64px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+/* #sort-section .sort-part {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+} */
+.array {
+    height: 413px;
+    width: 598px;
+    position: relative;
+}
+.block {
+    width: 28px;
+    background-color: var(--sky-blue);
+    position: absolute;
+    bottom: 0;
+    transition: 0.2s all ease;
+}
+
+.block_id {
+    position: absolute;
+    color: var(--sky-blue);
+    margin-top: -20px;
+    width: 100%;
+    text-align: center;
+}
+
+.controls {
+	text-align: center;
+	margin-top: 20px;
 }
