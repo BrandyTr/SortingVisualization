@@ -146,13 +146,16 @@ header {
 
 #content p, ul {
     text-align: justify; /* Justify text alignment */
-    /* margin: 10px 0; */
+    margin: 15px 0;
 }
 
 #content ul {
     padding-left: 50px;
 }
 
+#content ul li {
+    margin: 5px 0;
+}
 /* SORTING */
 #sort-section {
     /* max-width: 800px; */
@@ -182,6 +185,7 @@ header {
     margin: 0 auto;
 } */
 
+/* Sort Block */
 .array {
     /* display: flex;
     justify-items: center;
@@ -214,6 +218,7 @@ header {
 	margin-top: 30px;
 }
 
+/* Sort Button */
 .controls button {
     background-color: var(--black-blue);
     color: var(--nearly-white);
