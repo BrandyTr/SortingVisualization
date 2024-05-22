@@ -124,9 +124,10 @@ header {
 #header-text h1 {
     font-size: 3em; /* Kích thước chữ */
     margin: 0; /* Loại bỏ margin mặc định */
+    font-weight: 900;
 }
 
-#header-text span {
+#header-text #second-header {
     /* display: block; */
 }
 
