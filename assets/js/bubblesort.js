@@ -159,3 +159,25 @@ document.querySelector('.random-Btn').addEventListener('click', function() {
 })
 
 generateArray();
+
+
+
+// Content code
+function showCode(language) {
+    //Hide all code blocks
+    var codeBlocks = document.querySelectorAll('.code-block');
+    for (var i = 0; i < codeBlocks.length; i++) {
+        codeBlocks[i].classList.remove('active');
+    }
+
+    //Show selected code block
+    document.getElementById(language).classList.add('active');
+
+    // Display the code container if it's hidden
+    document.querySelector('.code-container').style.display = 'block';
+}
+
+// Initially show the first code block (optional)
+document.addEventListener('DOMContentLoaded', function() {
+    showCode('c');
+});

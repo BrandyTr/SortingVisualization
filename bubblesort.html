@@ -86,7 +86,130 @@
     <!-- END SORT SECTION -->
     
     <!-- CONTENT -->
+    <div id="content_sorting">
+        <div class="description_sort">
+            <h2>DESCRIPTION</h2>
+            <p>Bubble Sort is the simplest sorting algorithm that works 
+                by repeatedly swapping the adjacent elements if they are in 
+                the wrong order. This algorithm is not suitable for large data
+                 sets as its average and worst-case time complexity is quite high.</p>
+            <p>In Bubble Sort algorithm:</p>
+            <ul>
+                <li>Traverse from left and compare adjacent elements and the higher one is placed at right side. </li>
+                <li>In this way, the largest element is moved to the rightmost end at first.</li>
+                <li>This process is then continued to find the second largest and place it and so on until the data is sorted.</li>
+                <li><strong>Total no. of passes:</strong> n-1</li>
+                <li><strong>Total no. of comparisons:</strong> n*(n-1)/2</li>
+            </ul>
+
+            <!-- Advantage & Disadvantage -->
+            <table>
+                <!-- Title table -->
+                <thead>
+                    <tr>
+                        <th>Advantages</th>
+                        <th>Disadvantages</th>
+                    </tr>
+                </thead>
+
+                <!-- Body table -->
+                <tbody>
+                    <tr>
+                        <td>
+                            <ul>
+                                <li>Simple to understand and implement.</li>
+                                <li>No additional memory space required.</li>
+                                <li>Stable sorting algorithm, preserving the relative order of elements with equal key values.</li>
+                            </ul>
+                        </td>
+
+                        <td>
+                            <ul>
+                                <li>Time complexity of O(n<sup>2</sup>), making it inefficient for large datasets.</li>
+                                <li>As a comparison-based algorithm, its efficiency can be limited by the need for a 
+                                    comparison operator to determine element order.</li>
+                            </ul>
+                    </tr>
+                </tbody>
+            </table>
+
+            
+        </div>
+        <div class="complexity_sort">
+            <h2>COMPLEXITY</h2>
+            <table>
+                <tr>
+                    <th>Worst Case</th>
+                    <td>O(n<sup>2</sup>)</td>
+                </tr>
+                <tr>
+                    <th>Best Case</th>
+                    <td>O(n)</td>
+                </tr>
+                <tr>
+                    <th>Average Case</th>
+                    <td>O(n<sup>2</sup>)</td>
+                </tr>
+                <tr>
+                    <th>Space Complexity</th>
+                    <td>O(1)</td>
+                </tr>
+            </table>
+        </div>
+    </div>
     <!-- END CONTENT -->
+
+
+    <!-- CODE CONTENT -->
+    <div id="code-content-section">
+        <h2>IMPLEMENTATIONS</h2>
+        <div id="code-part">
+            <div class="tab">
+                <button class="tab-link" onclick="showCode('c')"><img src="/assets/img/C_Logo.png" alt="C"></button>
+                <button class="tab-link" onclick="showCode('java')"><img src="/assets/img/Java-Logo.png" alt="Java"></button>
+            </div>
+    
+            <div class="code-container">
+                <!-- C language -->
+                <div id="code-C">
+                    <pre id="c" class="code-block">
+    void bubble_sort(long arr[], long n) {
+        long c, d, t;
+        for (c = 0; c < n - 1; c++) {
+            for (d = 0; d < n - c - 1; d++) {
+                if (arr[d] > arr[d + 1]) {
+                    t = arr[d];
+                    arr[d] = arr[d + 1];
+                    arr[d + 1] = t;
+               }
+            }
+        }
+    }
+                    </pre>
+                </div>
+    
+                <!-- Java language -->
+                <div id="code-Java">
+                    <pre id="java" class="code-block">
+                        int n = arr.length;
+                        public static void bubbleSort(int[] arr) {
+                            for (int i = 0; i < n - 1; i++) {
+                                for (int j = 0; j < n - i - 1; j++) {
+                                    if (arr[j] > arr[j + 1]) {
+                                        int temp = arr[j];
+                                        arr[j] = arr[j + 1];
+                                        arr[j + 1] = temp;
+                                    }
+                                }
+                            }
+                        }
+                    </pre>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- END CODE CONTENT -->
 
     <!-- FOOTER -->
     <div id="footer">
