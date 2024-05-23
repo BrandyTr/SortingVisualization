@@ -65,6 +65,8 @@ function swap(ele1, ele2) {
 async function BubbleSort() {
     var blocks = document.querySelectorAll(".block");
     isSorting = true;
+    isPaused = false; // ensure sorting is not paused initially
+    updatePauseBtn();
 
     // Bubble Sort Algorithm
     for(var i = 0; i < blocks.length; i++) {
@@ -74,6 +76,7 @@ async function BubbleSort() {
             if (shouldStop) {
                 isSorting = false;
                 shouldStop = false; // reset shouldStop
+                updatePauseBtn();
                 return;
             }
 
@@ -111,8 +114,23 @@ async function BubbleSort() {
 
     isSorting = false;
     currentSort = null;
+    updatePauseBtn();
 }
 
+// update button pause based on the state
+function updatePauseBtn() {
+    var pauseBtn = document.querySelector('.pause-Btn');
+    if (isSorting) { // if sorting
+        if (isPaused) { // if paused
+            pauseBtn.innerHTML = '<i class="fa-solid fa-play"></i>'; // Resume icon
+        } else {
+            pauseBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
+        }
+    } else {
+        pauseBtn.innerHTML = '<i class="fa-solid fa-play"></i>'; // Pause icon
+    
+    }
+}
 // Speed Change
 document.querySelector('.speed').addEventListener('change', function() {
     speed = document.querySelector('.speed').value;
@@ -132,22 +150,15 @@ document.querySelector('.sort-Btn').addEventListener('click', function() {
             currentSort = BubbleSort();
         })
     }
+    updatePauseBtn();
 })
 
-
+// Pause/ Resume state
 document.querySelector('.pause-Btn').addEventListener('click', function() {
     var pauseBtn = document.querySelector('.pause-Btn');
     if (isSorting) {
         isPaused = !isPaused; // toggle isPaused
-        if (isPaused) { // if paused
-            pauseBtn.innerHTML = '<i class="fa-solid fa-play"></i>'; //Resume icon
-        } else { // if resume
-            pauseBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
-        }
-    } else {
-        isPaused = false; 
-        pauseBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
-        BubbleSort();
+        updatePauseBtn();
     }
 });
 
@@ -156,6 +167,7 @@ document.querySelector('.random-Btn').addEventListener('click', function() {
     generateArray();
     isSorting = false; // stop current sorting
     currentSort = null;
+    updatePauseBtn();
 })
 
 generateArray();
