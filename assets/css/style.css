@@ -4,6 +4,9 @@
     --sky-blue: #3F9BBF;
     --light-blue: #C9E2F2;
     --nearly-white: #F4F4F4;
+    --blue-soft: #637A9F;
+    --beggie: #EADFB4;
+    --nearly-black-blue: #153448;
     --trans: all 0.3s ease-in-out;
 }
 
@@ -32,6 +35,7 @@
 
 .site-brand span {
     font-weight: 300;
+    color: ;
 }
 
 #navbar-show-btn {
@@ -138,6 +142,7 @@ header {
     align-items: center;
     font-family: 'Poppins';
     line-height: 1.6;
+    background-color: var(--nearly-white);
 }
 
 #content #about-content {
@@ -157,14 +162,22 @@ header {
 #content ul li {
     margin: 5px 0;
 }
-/* SORTING */
+/* BODY */
+#body-section {
+    /* background-color: #EEF7FF; */
+    background: url(/assets/img/abstract-textured-backgound.jpg) no-repeat top left / cover;
+    width: 100%;
+}
+/* SORTING SECTION */
 #sort-section {
     /* max-width: 800px; */
     margin-top: 4rem;
     margin-left: auto;
     margin-right: auto;
     padding: 30px 0;
-    background-color: var(--light-blue);
+    background-color: var(--nearly-white);
+    /* background: url(/assets/img/bg-VS.jpg) no-repeat top left / cover; */
+
 }
 
 #sort-section .header_sortname {
@@ -262,11 +275,11 @@ header {
     max-width: 1200px;
 }
 
-#content_sorting h2 {
+#content_sorting h2, #code-content-section h2 {
     font-family: 'Montserrat';
-    font-weight: 600;
-    font-size: 23px;
-    margin-bottom: 16px;
+    font-weight: 700;
+    font-size: 28px;
+    margin-bottom: 10px;
 }
 
 /* description */
@@ -275,6 +288,7 @@ header {
     flex: 1 1 65%;
     margin-right: 100px;
     box-sizing: border-box;
+    margin-bottom: 50px;
 
 }
 
@@ -283,6 +297,9 @@ header {
     margin: 15px 0;
 }
 
+.description_sort #first-des {
+    margin-top: 0;
+}
 .description_sort ul {
     padding-left: 50px;
 }
@@ -290,19 +307,32 @@ header {
 .description_sort ul li {
     margin: 5px 0;
 }
-
+.description_sort strong {
+    font-weight: 700;
+    background-color: var(--beggie);
+    padding: 0 5px;
+}
 /* Description table */
 .description_sort table {
-    width: 100%;
+    width: 90%;
     border-collapse: collapse;
+    margin-top: 20px;
 }
 
-.description_sort th, td {
-    border: 1.5px solid var(--black-blue);
+.description_sort th, .description_sort td {
+    border: 2px solid var(--black-blue);
     padding: 0 1rem;
     text-align: center;
+    vertical-align: top;
 }
-
+.description_sort th {
+    background-color: var(--blue-soft);
+    padding: 10px;
+    color: var(--nearly-white);
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
 .description_sort ul {
     padding-left: 30px;
 }
@@ -317,13 +347,26 @@ header {
     width: 100%;
     border-collapse: collapse;
     line-height: 2.5;
+    background-color: var(--blue-soft);
+    font-size: 18px;
 }
 
-.complexity_sort th, td {
-    border: 1.5px solid var(--black-blue);
+.complexity_sort th {
+    font-weight: 600;
+    letter-spacing: 0.2px;
+}
+
+.complexity_sort th, .complexity_sort td {
+    color: var(--nearly-white);
+    border: 1.7px solid var(--black-blue);
     padding: 0 1rem;
     text-align: center;
     vertical-align: top;
+}
+
+.complexity_sort td {
+    font-weight: 400;
+    text-align: left;
 }
 
 /* CODE CONTENT */
@@ -336,12 +379,12 @@ header {
     max-width: 1200px;
 }
 
-#code-content-section h2 {
+/* #code-content-section h2 {
     font-family: 'Montserrat';
     font-weight: 600;
     font-size: 23px;
     margin-bottom: 16px;
-}
+} */
 
 #code-content-section .tab {
     display: flex;
@@ -349,12 +392,17 @@ header {
 }
 
 #code-content-section .tab-link {
-    background: #C9E2F2;
-    border: 2px solid #3F9BBF;
+    background: var(--nearly-black-blue);
+    border: 2px solid #DD761C;
+    border-bottom: none;
+    /* border-radius: 15px 15px 0 0; */
     width: 80px;
     cursor: pointer;
     padding: 5px 20px;
-    /* margin-bottom: -1px; */
+    margin-bottom: -2px;
+}
+#code-content-section .tab #first-tab-link {
+    border-top-left-radius: 20px;
 }
 
 #code-content-section .tab-link img {
@@ -362,7 +410,7 @@ header {
 }
 
 #code-content-section .code-container {
-    background-color: #012840;
+    background-color: var(--nearly-black-blue);
     border: 2px solid #3F9BBF;
     text-align: left;
     padding: 20px 10px;

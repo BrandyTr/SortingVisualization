@@ -61,7 +61,7 @@
         margin-top: 0;
         margin-left: 2rem;
     }
-    .navbar-nav a {
-        color: var(--nearly-white);
+    #navbar-collapse a {
+        color: #EEF7FF;
     }
 }
