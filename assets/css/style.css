@@ -37,7 +37,6 @@
 
 .site-brand span {
     font-weight: 300;
-    color: ;
 }
 
 #navbar-show-btn {
@@ -113,6 +112,7 @@
     color: var(--blue);
 }
 
+
 /* HEADER */
 header {
     position: relative;
@@ -128,10 +128,21 @@ header {
 }
 
 #header-text h1 {
-    font-size: 3em; /* Kích thước chữ */
-    margin: 0; /* Loại bỏ margin mặc định */
+    font-size: 3em;
+    margin: 0;
     font-weight: 900;
+    /* animation: fadeIn 0.7s ease-in-out; */
 }
+
+/* @keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+} */
+
 
 #header-text #second-header {
     /* display: block; */
