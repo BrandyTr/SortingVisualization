@@ -168,44 +168,64 @@
             <h2>IMPLEMENTATIONS</h2>
             <div id="code-part">
                 <div class="tab">
-                    <button id="first-tab-link" class="tab-link" onclick="showCode('c')"><img src="/assets/img/C_Logo.png" alt="C"></button>
-                    <button class="tab-link" onclick="showCode('java')"><img src="/assets/img/Java-Logo.png" alt="Java"></button>
+                    <button id="first-tab-link" class="tab-link active" onclick="showCode('c', this)"><img src="/assets/img/C_Logo.png" alt="C"></button>
+                    <button class="tab-link" onclick="showCode('java', this)"><img src="/assets/img/Java-Logo.png" alt="Java"></button>
                 </div>
         
                 <div class="code-container">
                     <!-- C language -->
                     <div id="code-C">
-                        <pre id="c" class="code-block">
-        void bubble_sort(long arr[], long n) {
-            long c, d, t;
-            for (c = 0; c < n - 1; c++) {
-                for (d = 0; d < n - c - 1; d++) {
-                    if (arr[d] > arr[d + 1]) {
-                        t = arr[d];
-                        arr[d] = arr[d + 1];
-                        arr[d + 1] = t;
-                   }
-                }
+                        <pre id="c" class="code-block active">
+void swap(int* xp, int* yp)
+{
+    int temp = *xp;
+    *xp = *yp;
+    *yp = temp;
+}
+
+void bubbleSort(int arr[], int n)
+{
+    int i, j;
+    bool swapped;
+    for (i = 0; i < n - 1; i++) {
+        swapped = false;
+        for (j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                swap(&arr[j], &arr[j + 1]);
+                swapped = true;
             }
         }
+
+        if (swapped == false)
+            break;
+    }
+}
                         </pre>
                     </div>
         
                     <!-- Java language -->
                     <div id="code-Java">
                         <pre id="java" class="code-block">
-                            int n = arr.length;
-                            public static void bubbleSort(int[] arr) {
-                                for (int i = 0; i < n - 1; i++) {
-                                    for (int j = 0; j < n - i - 1; j++) {
-                                        if (arr[j] > arr[j + 1]) {
-                                            int temp = arr[j];
-                                            arr[j] = arr[j + 1];
-                                            arr[j + 1] = temp;
-                                        }
-                                    }
-                                }
-                            }
+static void bubbleSort(int arr[], int n)
+{
+    int i, j, temp;
+    boolean swapped;
+    for (i = 0; i < n - 1; i++) {
+        swapped = false;
+        for (j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                
+                temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+                swapped = true;
+            }
+        }
+
+        if (swapped == false)
+            break;
+    }
+}
                         </pre>
                     </div>
     

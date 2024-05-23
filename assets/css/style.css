@@ -8,6 +8,8 @@
     --beggie: #EADFB4;
     --nearly-black-blue: #153448;
     --trans: all 0.3s ease-in-out;
+    --orange: #DD761C;
+    --button-sort: #E9C874;
 }
 
 /* NAV BAR */
@@ -188,7 +190,7 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
 }
 
 /* #sort-section .sort-part {
@@ -221,7 +223,9 @@ header {
 
 .block_id {
     position: absolute;
-    color: var(--sky-blue);
+    color: var(--nearly-black-blue);
+    opacity: 0.95;
+    font-size: 14px;
     margin-top: -20px;
     width: 100%;
     text-align: center;
@@ -234,29 +238,48 @@ header {
 
 /* Sort Button */
 .controls button {
-    background-color: var(--black-blue);
-    color: var(--nearly-white);
+    background-color: var(--button-sort);
+    color: var(--black-blue);
     border: none;
     padding: 5px 14px;
     font-size: 18px;
+    border-radius: 5px;
     cursor: pointer;
     margin: 10px 8px;
+    font-weight: 600;
+}
+.controls button:hover {
+    background-color: var(--black-blue);
+    color: var(--nearly-white);
+    opacity: 0.9;
 }
 
 .controls select {
-    background-color: var(--black-blue);
-    color: var(--nearly-white);
+    background-color: var(--beggie);
+    color: var(--black-blue);
     border: none;
+    border-radius: 5px;
     padding: 5px 14px;
     font-size: 18px;
     cursor: pointer;
     margin: 10px 0;
 }
 
+.controls select:hover {
+    background-color: var(--black-blue);
+    color: var(--nearly-white);
+    opacity: 0.9;
+}
 .controls label {
+    /* background-color: var(--beggie); */
     color: var(--black-blue);
+    border: none;
+    padding: 5px 14px;
+    padding-right: 0;
     font-size: 18px;
-    margin: 10px 0;
+    /* margin: 10px 8px; */
+    margin-right: 0;
+    font-weight: 600;
 }
 
 /* Content_sorting */
@@ -392,17 +415,35 @@ header {
 }
 
 #code-content-section .tab-link {
-    background: var(--nearly-black-blue);
-    border: 2px solid #DD761C;
-    border-bottom: none;
+    background: var(--light-blue);
+    border: 3px solid var(--orange);
+    /* border-bottom: none; */
     /* border-radius: 15px 15px 0 0; */
     width: 80px;
     cursor: pointer;
     padding: 5px 20px;
-    margin-bottom: -2px;
+    margin-bottom: -3px;
+    margin-left: -3px;
+
+    opacity: 0.9;
+    transition: opacity 0.3s;
+}
+#code-content-section .tab-link img:hover {
+    transform: scale(1.25);
+}
+
+#code-content-section .tab-link:hover {
+    background: #b5c9ec;
+}
+
+#code-content-section .tab-link.active {
+    opacity: 1;
+    background: var(--nearly-black-blue);
+    border-bottom: none;
 }
 #code-content-section .tab #first-tab-link {
     border-top-left-radius: 20px;
+    margin-left: 0px;
 }
 
 #code-content-section .tab-link img {
@@ -411,7 +452,7 @@ header {
 
 #code-content-section .code-container {
     background-color: var(--nearly-black-blue);
-    border: 2px solid #3F9BBF;
+    border: 3px solid var(--orange);
     text-align: left;
     padding: 20px 10px;
     display: none;

@@ -163,7 +163,7 @@ generateArray();
 
 
 // Content code
-function showCode(language) {
+function showCode(language, element) {
     //Hide all code blocks
     var codeBlocks = document.querySelectorAll('.code-block');
     for (var i = 0; i < codeBlocks.length; i++) {
@@ -175,9 +175,18 @@ function showCode(language) {
 
     // Display the code container if it's hidden
     document.querySelector('.code-container').style.display = 'block';
+
+    // Remove active class from all tabs
+    var tabs = document.getElementsByClassName('tab-link')
+    for (var i = 0; i < tabs.length; i++) {
+        tabs[i].classList.remove('active');
+    }
+
+    // Active class to the selected tab
+    element.classList.add('active');
 }
 
 // Initially show the first code block (optional)
 document.addEventListener('DOMContentLoaded', function() {
-    showCode('c');
+    showCode('c', document.querySelector('.tab-link'));
 });
