@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Visualizer</title>
+
+    <!-- font awesome cdn: for icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- fonts -->
+    <link rel="stylesheet" href="./assets/fonts/font.css">
+
+    <!-- normalize css -->
+    <link rel="stylesheet" href="./assets/css/normalize.css">
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="./assets/css/utility.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+</head>
+<body>
+    <!-- NAV BAR -->
+    <nav class="navbar">
+        <div class="container flex">
+            <a href="index.html" class="site-brand">
+                Sorting<span>Visualizer</span>
+            </a>
+
+            <!-- Button SV -->
+            <button type="button" id = "navbar-show-btn" class="flex">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <!-- Button small -->
+            <div id="navbar-collapse">
+                <button type="button" id="navbar-close-btn" class="flex">
+                    <i class="fas fa-times"></i>
+                </button>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link"><i class="home-icon fa-solid fa-house"></i>Home</a></li>
+                    <li class="nav-item">
+                        <a href="bubblesort.html" class="nav-link">Bubble Sort</a></li>
+                    <li class="nav-item">
+                        <a href="selectionsort.html" class="nav-link">Selection Sort</a></li>
+                    <li class="nav-item">
+                        <a href="insertionsort.html" class="nav-link">Insertion Sort</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+    <!-- END NAV BAR -->
+
+    <!-- SORT SECTION -->
+    <div id="sort-section">
+        <div class="header_sortname">
+            <h2>Selection Sort</h2>
+        </div>
+
+        <!-- sort part -->
+        <div class="sort-part">
+            <div class="array"></div>
+
+            <!-- Control for sorting speed & block value -->
+            <div class="controls">
+                <button class="sort-Btn">Start Sorting</button>
+                <button class="pause-Btn"><i class="fa-solid fa-play"></i></button>
+                <br>
+                <button class="random-Btn">Random Values</button>
+                <label for="speed">Sort Speed:</label>
+                <select class="speed">
+                    <option value="2000">0.5x</option>
+                    <option value="1000" selected>1x</option>
+                    <option value="500">1.5x</option>
+                    <option value="200">2x</option>
+                </select>
+                <!-- <button class="speed-Btn">Apply Speed</button> -->
+            </div>
+        </div>
+
+    </div>
+    <!-- END SORT SECTION -->
+    
+    <!-- BODY -->
+    <div id="body-section">
+
+        <!-- CONTENT -->
+        <div id="content_sorting">
+            <div class="description_sort">
+                <h2>DESCRIPTION</h2>
+                <p id="first-des">Selection Sort is a simple and efficient sorting algorithm that works by repeatedly
+                     selecting the smallest (or largest) element from the unsorted portion of the list and moving it to
+                      the sorted portion of the list. This algorithm is straightforward and performs well on small datasets.</p>
+                <p>In Selection Sort algorithm:</p>
+                <ul>
+                    <li>Repeatedly select the smallest (or largest) element from the unsorted portion of the list.</li>
+                    <li>Swap it with the first element of the unsorted part.</li>
+                    <li>Continue this process for the remaining unsorted portion until the entire list is sorted.</li>
+                </ul>
+    
+                <!-- Advantage & Disadvantage -->
+                <table>
+                    <!-- Title table -->
+                    <thead>
+                        <tr>
+                            <th>Advantages</th>
+                            <th>Disadvantages</th>
+                        </tr>
+                    </thead>
+    
+                    <!-- Body table -->
+                    <tbody>
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li>Simple and easy to understand.</li>
+                                    <li>Works well with small datasets.</li>
+                                </ul>
+                            </td>
+    
+                            <td>
+                                <ul>
+                                    <li>Time complexity of O(n<sup>2</sup>) in the worst and average case.</li>
+                                    <li>Does not work well on large datasets.</li>
+                                    <li>Does not preserve the relative order of items with equal keys which means it is not stable.</li>
+                                </ul>
+                        </tr>
+                    </tbody>
+                </table>
+    
+                
+            </div>
+            <div class="complexity_sort">
+                <h2>COMPLEXITY</h2>
+                <table>
+                    <tr>
+                        <th>Worst Case</th>
+                        <td>O(n<sup>2</sup>)</td>
+                    </tr>
+                    <tr>
+                        <th>Best Case</th>
+                        <td>O(n<sup>2</sup>)</td>
+                    </tr>
+                    <tr>
+                        <th>Average Case</th>
+                        <td>O(n<sup>2</sup>)</td>
+                    </tr>
+                    <tr>
+                        <th>Space Complexity</th>
+                        <td>O(1)</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- END CONTENT -->
+    
+    
+        <!-- CODE CONTENT -->
+        <div id="code-content-section">
+            <h2>IMPLEMENTATIONS</h2>
+            <div id="code-part">
+                <div class="tab">
+                    <button id="first-tab-link" class="tab-link active" onclick="showCode('c', this)"><img src="/assets/img/C_Logo.png" alt="C"></button>
+                    <button class="tab-link" onclick="showCode('java', this)"><img src="/assets/img/Java-Logo.png" alt="Java"></button>
+                </div>
+        
+                <div class="code-container">
+                    <!-- C language -->
+                    <div id="code-C">
+                        <pre id="c" class="code-block active">
+void swap(int *xp, int *yp) {
+    int temp = *xp;
+    *xp = *yp;
+    *yp = temp;
+}
+
+void selectionSort(int arr[], int n) {
+    int i, j, min_idx;
+
+    for (i = 0; i < n-1; i++) {
+        min_idx = i;
+        for (j = i+1; j < n; j++)
+          if (arr[j] < arr[min_idx])
+            min_idx = j;
+
+           if(min_idx != i)
+            swap(&arr[min_idx], &arr[i]);
+    }
+}
+                        </pre>
+                    </div>
+        
+                    <!-- Java language -->
+                    <div id="code-Java">
+                        <pre id="java" class="code-block">
+public class SelectionSort {
+    void sort(int arr[]) {
+        int n = arr.length;
+
+        for (int i = 0; i < n-1; i++) {
+
+            int min_idx = i;
+            for (int j = i+1; j < n; j++)
+                if (arr[j] < arr[min_idx])
+                    min_idx = j;
+
+            int temp = arr[min_idx];
+            arr[min_idx] = arr[i];
+            arr[i] = temp;
+        }
+    }
+}
+                        </pre>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+        <!-- END CODE CONTENT -->
+    </div>
+    <!-- END BODY -->
+
+    <!-- FOOTER -->
+    <div id="footer">
+        <div class="footer-text">
+            <!-- <p>© 2022 Sorting Visualizer. All rights reserved.</p> -->
+            <!-- <h2>Contact</h2> -->
+            <p>Developed by Tran Bao Tu</p>
+            <p><i class="email-icon fa-solid fa-envelope"></i>Email: baotutran1103@gmail.com</p>
+            <p id="contact-icon">
+
+                <a href="https://www.facebook.com/brandy.tran.148/"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://github.com/BrandyTr"><i class="fa-brands fa-github"></i></a>
+            </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Overlay -->
+    <div id="modal-overlay">
+        
+    </div>
+    <!-- JS -->
+    <script src="/assets/js/script.js"></script>
+    <script src="/assets/js/bubblesort.js"></script>
+</body>
+</html>
