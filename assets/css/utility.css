@@ -63,3 +63,15 @@ a {
     visibility: visible;
 }
 
+
+/* FOOTER */
+#footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1.8rem 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
