@@ -203,7 +203,10 @@ header {
     text-align: center;
     font-size: 1.5rem;
 }
-
+#sort-section #ele {
+    text-align: center;
+    height: 35px;
+}
 /* #sort-section .sort-part {
     display: flex;
     justify-items: center;

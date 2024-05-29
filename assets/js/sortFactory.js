@@ -5,6 +5,8 @@ class SortFactory {
                 return new BubbleSort();
             case 'selection':
                 return new SelectionSort();
+            case 'insertion':
+                return new InsertionSort();
             default:
                 throw new Error('Unknown sorting algorithm type');
         }
