@@ -92,15 +92,19 @@
         <!-- CONTENT -->
         <div id="content_sorting">
             <div class="description_sort">
-                <h2>DESCRIPTION</h2>
-                <p id="first-des">Selection Sort is a simple and efficient sorting algorithm that works by repeatedly
-                     selecting the smallest (or largest) element from the unsorted portion of the list and moving it to
-                      the sorted portion of the list. This algorithm is straightforward and performs well on small datasets.</p>
-                <p>In Selection Sort algorithm:</p>
-                <ul>
-                    <li>Repeatedly select the smallest (or largest) element from the unsorted portion of the list.</li>
-                    <li>Swap it with the first element of the unsorted part.</li>
-                    <li>Continue this process for the remaining unsorted portion until the entire list is sorted.</li>
+                <h2>DESCRIPTION</h2> 
+                <p id="first-des"><strong>Insertion Sort</strong> is a straightforward sorting algorithm that builds the final 
+                    sorted array one element at a time. It is much less efficient on large lists than more 
+                    advanced algorithms such as quicksort, heapsort, or merge sort.</p>
+                <p>In Insertion Sort algorithm:</p>
+                <ul class="numbered-list">
+                    <li>Start with the second element of the array, as the first element is assumed to be sorted.</li>
+                    <li>Compare the second element with the first element. If the second element is smaller, swap them.</li>
+                    <li>Move to the third element and compare it with the second element, then the first element, and swap as 
+                        necessary to place it in the correct position among the first three elements.</li>
+                    <li>Continue this process, comparing each element with the ones before it and swapping as needed to 
+                        place it in the correct position among the sorted elements.</li>
+                    <li>Repeat until the entire array is sorted.</li>
                 </ul>
     
                 <!-- Advantage & Disadvantage -->
@@ -119,15 +123,17 @@
                             <td>
                                 <ul>
                                     <li>Simple and easy to understand.</li>
-                                    <li>Works well with small datasets.</li>
+                                    <li>Stable sorting algorithm.</li>
+                                    <li>Efficient for small lists and nearly sorted lists.</li>
+                                    <li>Space-efficient.</li>
                                 </ul>
                             </td>
     
                             <td>
                                 <ul>
-                                    <li>Time complexity of O(n<sup>2</sup>) in the worst and average case.</li>
-                                    <li>Does not work well on large datasets.</li>
-                                    <li>Does not preserve the relative order of items with equal keys which means it is not stable.</li>
+                                    <li>Inefficient for large lists.</li>
+                                    <li>Not as efficient as other sorting algorithms 
+                                        (e.g., merge sort, quick sort) for most cases.</li>
                                 </ul>
                         </tr>
                     </tbody>
@@ -144,7 +150,7 @@
                     </tr>
                     <tr>
                         <th>Best Case</th>
-                        <td>O(n<sup>2</sup>)</td>
+                        <td>O(n)</td>
                     </tr>
                     <tr>
                         <th>Average Case</th>
@@ -173,23 +179,17 @@
                     <!-- C language -->
                     <div id="code-C">
                         <pre id="c" class="code-block active">
-void swap(int *xp, int *yp) {
-    int temp = *xp;
-    *xp = *yp;
-    *yp = temp;
-}
+void insertionSort(int arr[], int n) {
+    int i, key, j;
+    for (i = 1; i < n; i++) {
+        key = arr[i];
+        j = i - 1;
 
-void selectionSort(int arr[], int n) {
-    int i, j, min_idx;
-
-    for (i = 0; i < n-1; i++) {
-        min_idx = i;
-        for (j = i+1; j < n; j++)
-          if (arr[j] < arr[min_idx])
-            min_idx = j;
-
-           if(min_idx != i)
-            swap(&arr[min_idx], &arr[i]);
+        while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            j = j - 1;
+        }
+        arr[j + 1] = key;
     }
 }
                         </pre>
@@ -198,21 +198,17 @@ void selectionSort(int arr[], int n) {
                     <!-- Java language -->
                     <div id="code-Java">
                         <pre id="java" class="code-block">
-public class SelectionSort {
-    void sort(int arr[]) {
-        int n = arr.length;
+void insertionSort(int arr[]) {
+    int n = arr.length;
+    for (int i = 1; i < n; ++i) {
+        int key = arr[i];
+        int j = i - 1;
 
-        for (int i = 0; i < n-1; i++) {
-
-            int min_idx = i;
-            for (int j = i+1; j < n; j++)
-                if (arr[j] < arr[min_idx])
-                    min_idx = j;
-
-            int temp = arr[min_idx];
-            arr[min_idx] = arr[i];
-            arr[i] = temp;
+        while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            j = j - 1;
         }
+        arr[j + 1] = key;
     }
 }
                         </pre>

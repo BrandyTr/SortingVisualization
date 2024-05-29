@@ -347,18 +347,19 @@ header {
     text-align: justify;
     margin: 15px 0;
 }
-
+.description_sort .numbered-list {
+    list-style-type: decimal;
+}
 .description_sort #first-des {
     margin-top: 0;
 }
 .description_sort ul {
     padding-left: 50px;
 }
-
 .description_sort ul li {
     margin: 5px 0;
 }
-.description_sort strong {
+.description_sort .total-bubble {
     font-weight: 700;
     background-color: var(--beggie);
     padding: 0 5px;

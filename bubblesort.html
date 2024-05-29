@@ -101,8 +101,8 @@
                     <li>Traverse from left and compare adjacent elements and the higher one is placed at right side. </li>
                     <li>In this way, the largest element is moved to the rightmost end at first.</li>
                     <li>This process is then continued to find the second largest and place it and so on until the data is sorted.</li>
-                    <li><strong>Total no. of passes:</strong> n-1</li>
-                    <li><strong>Total no. of comparisons:</strong> n*(n-1)/2</li>
+                    <li><strong class="total-bubble">Total no. of passes:</strong> n-1</li>
+                    <li><strong class="total-bubble">Total no. of comparisons:</strong> n*(n-1)/2</li>
                 </ul>
     
                 <!-- Advantage & Disadvantage -->
@@ -183,10 +183,10 @@ void swap(int* xp, int* yp)
     *yp = temp;
 }
 
-void bubbleSort(int arr[], int n)
-{
+void bubbleSort(int arr[], int n) {
     int i, j;
     bool swapped;
+
     for (i = 0; i < n - 1; i++) {
         swapped = false;
         for (j = 0; j < n - i - 1; j++) {
@@ -206,10 +206,10 @@ void bubbleSort(int arr[], int n)
                     <!-- Java language -->
                     <div id="code-Java">
                         <pre id="java" class="code-block">
-static void bubbleSort(int arr[], int n)
-{
+void bubbleSort(int arr[], int n) {
     int i, j, temp;
     boolean swapped;
+    
     for (i = 0; i < n - 1; i++) {
         swapped = false;
         for (j = 0; j < n - i - 1; j++) {
