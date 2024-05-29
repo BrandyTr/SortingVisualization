@@ -196,6 +196,7 @@ header {
 #sort-section .header_sortname {
     position: relative;
     display: flex;
+    flex-direction: column;
     top: 0;
     /* height: 64px; */
     justify-content: center;
@@ -206,6 +207,19 @@ header {
 #sort-section #ele {
     text-align: center;
     height: 35px;
+}
+
+#sort-section h3 {
+    display: flex;
+    font-family: 'Montserrat';
+    margin-top: 20px;
+    font-size: 18px;
+    padding: 7px 10px;
+    font-weight: 600;
+    background-color: var(--black-blue);
+    color: var(--nearly-white);
+    border-radius: 5px;
+    letter-spacing: 0.5px;
 }
 /* #sort-section .sort-part {
     display: flex;
@@ -222,7 +236,7 @@ header {
     align-items: center; */
     margin-left: auto;
     margin-right: auto;
-    height: 413px;
+    height: 375px;
     width: calc(30px*20 + 3px*19);
     position: relative;
     

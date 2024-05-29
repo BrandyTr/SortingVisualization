@@ -28,6 +28,8 @@ class InsertionSort extends SortStrategy {
                     isSorting = false;
                     shouldStop = false; // reset shouldStop
                     updatePauseBtn();
+                    clearSelectedElementMessage();
+
                     return;
                 }
 
@@ -58,9 +60,11 @@ class InsertionSort extends SortStrategy {
             blocks[i].style.backgroundColor = "#7A9D54";
         }
 
+        barval.innerHTML = `<h3>Sorted!! </h3>`;
         isSorting = false;
         currentSort = null;
         updatePauseBtn();
+        clearSelectedElementMessage();
     }
 }
 

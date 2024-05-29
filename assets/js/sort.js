@@ -40,6 +40,11 @@ function generateArray() {
         array_ele.appendChild(array_ele_label); // Append label to div
         container.appendChild(array_ele);
     }
+
+    clearSelectedElementMessage();
+    isSorting = false;
+    currentSort = null;
+    updatePauseBtn();
 }
 
 // Swap 2 blocks
@@ -58,6 +63,14 @@ function swap(ele1, ele2) {
             }, 250)
         })
     })
+}
+
+// clear message "element selected"
+function clearSelectedElementMessage() {
+    var barval = document.getElementById("ele")
+    if(barval) {
+        barval.innerHTML = "";
+    }
 }
 
 // Observer Pattern to notify updates
@@ -148,11 +161,12 @@ document.querySelector('.pause-Btn').addEventListener('click', function() {
 });
 
 // randomize array
-document.querySelector('.random-Btn').addEventListener('click', function() {
-    generateArray();
-    isSorting = false; // stop current sorting
-    currentSort = null;
-    updatePauseBtn();
+document.querySelector('.random-Btn').addEventListener('click', async function() {
+    if (isSorting && currentSort) {
+        shouldStop = true; // signal to stop the sorting process
+        await currentSort; // wait for the current sort to completely stop
+    }
+    generateArray()
 });
 
 generateArray();
