@@ -40,14 +40,17 @@
 }
 
 #navbar-show-btn {
-    background: transparent;
+    background: none;
+    padding: 20px 20px;
     color: var(--nearly-white);
     font-size: 1.5rem;
     /* transition: var(--trans); */
     border: none;
+    /* line-height: 64px; */
 }
 
 #navbar-show-btn:hover {
+    /* line-height: 64px; */
     background-color: var(--light-blue);
     color: var(--black-blue);
 }
@@ -108,9 +111,9 @@
     /* transition: var(--trans); */
 }
 
-/* .nav-link:hover {
+.nav-link:hover {
     color: var(--blue);
-} */
+}
 
 
 /* HEADER */
