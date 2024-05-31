@@ -62,7 +62,7 @@
     right: 0;
     width: 300px;
     height: 100%;
-    padding: 2rem;
+    /* padding: 2rem; */
 
     transform: translateX(100%);
     transition: var(--trans);
@@ -80,11 +80,12 @@
     width: 35px;
     height: 35px;
     border: none;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     /* transition: var(--trans); */
     position: absolute;
     right: 0;
-    top: 1rem;
+    top: 0;
+    padding: 25px;
 }
 
 #navbar-close-btn:hover {
@@ -92,12 +93,12 @@
     color: var(--nearly-white);
 }
 
-.navbar-nav {
+/* .navbar-nav {
     margin-top: 3rem;
-}
+} */
 
 .nav-item {
-    margin: 1.5rem 0;
+    /* margin: 1.5rem 0; */
 }
 
 .navbar-nav .home-icon {
@@ -109,11 +110,11 @@
     font-size: 1.2rem;
     font-weight: 500;
     /* transition: var(--trans); */
-}
+} 
 
-.nav-link:hover {
+/* .nav-link:hover {
     color: var(--blue);
-}
+} */
 
 
 /* HEADER */
