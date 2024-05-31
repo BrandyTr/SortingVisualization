@@ -96,14 +96,23 @@
     }
     .nav-item {
         margin-top: 0;
-        line-height: 63.2px;
-        padding: 0 20px;
+        /* line-height: 63.2px;
+        padding: 0 20px; */
         /* margin-left: 2rem; */
+    }
+
+    .nav-link {
+        line-height: 63.9px;
+        padding: 0 20px;
+        font-size: 1.2rem;
+        font-weight: 500;
+        display: block;
+        position: relative;
     }
     #navbar-collapse a {
         color: #EEF7FF;
     }
-    .nav-item:hover {
+    .nav-link:hover {
         background-color: var(--blue-soft);
         color: #012840;
     }

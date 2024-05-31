@@ -105,12 +105,6 @@
     margin-right: 10px;
 }
 
-.nav-link {
-    color: var(--black-blue);
-    font-size: 1.2rem;
-    font-weight: 500;
-    /* transition: var(--trans); */
-} 
 
 /* .nav-link:hover {
     color: var(--blue);
