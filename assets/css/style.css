@@ -262,6 +262,13 @@ header {
 	margin-top: 30px;
 }
 
+button:disabled {
+    background-color: gray !important;
+    color: var(--nearly-white) !important;
+    cursor: not-allowed !important;
+    opacity: 0.6; /* Thêm hiệu ứng mờ */
+}
+
 /* Sort Button */
 .controls button {
     background-color: var(--button-sort);
@@ -278,6 +285,11 @@ header {
     background-color: var(--black-blue);
     color: var(--nearly-white);
     opacity: 0.9;
+}
+
+.controls button:disabled:hover {
+    opacity: 0.6; /* Giữ nguyên độ mờ ban đầu */
+    cursor: not-allowed !important; /* Đảm bảo con trỏ không bị ghi đè */
 }
 
 .controls select {

@@ -2,6 +2,14 @@ var container = document.querySelector(".array");
 var speed = 1000;
 var observers = [];
 
+// disable start button
+var sortBtn = document.getElementById("startSortBtn");
+var randomBtn = document.getElementById("randomBtn");
+
+// // forward and backward button
+// var backwardBtn = document.getElementById("stepBackwardBtn");
+// var forwardBtn = document.getElementById("stepForwardBtn");
+
 // check sorting in progress
 var isSorting = false;
 
@@ -44,6 +52,7 @@ function generateArray() {
     clearSelectedElementMessage();
     isSorting = false;
     currentSort = null;
+    sortBtn.disabled = false; // enable start button
     updatePauseBtn();
 }
 
@@ -139,6 +148,7 @@ document.querySelector('.sort-Btn').addEventListener('click', function() {
     if (!isSorting) { // if not sorting (isSorting = false)
         let sortContext = new SortContext(SortFactory.createSortAlgorithm(currentSortAlgorithm));
         currentSort = sortContext.executeSort();
+        sortBtn.disabled = true;
     } else { // if sorting (isSorting = true)
         shouldStop = true;
         currentSort.then(() => {
@@ -161,12 +171,18 @@ document.querySelector('.pause-Btn').addEventListener('click', function() {
 });
 
 // randomize array
-document.querySelector('.random-Btn').addEventListener('click', async function() {
-    if (isSorting && currentSort) {
+randomBtn.addEventListener('click', async function() {
+    if (isSorting) {
         shouldStop = true; // signal to stop the sorting process
-        await currentSort; // wait for the current sort to completely stop
+        if (isPaused) { // if paused, immediately generate new array
+            generateArray();
+        } else {
+            await currentSort; // wait for the current sort to completely stop
+            generateArray();
+        }
+    } else {
+        generateArray();
     }
-    generateArray()
 });
 
 generateArray();
