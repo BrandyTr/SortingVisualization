@@ -5,6 +5,7 @@ var observers = [];
 // disable start button
 var sortBtn = document.getElementById("startSortBtn");
 var randomBtn = document.getElementById("randomBtn");
+var pauseBtn = document.getElementById("pauseBtn");
 
 // // forward and backward button
 // var backwardBtn = document.getElementById("stepBackwardBtn");
@@ -54,6 +55,7 @@ function generateArray() {
     currentSort = null;
     sortBtn.disabled = false; // enable start button
     updatePauseBtn();
+    pauseBtn.disabled = true;
 }
 
 // Swap 2 blocks
@@ -149,6 +151,7 @@ document.querySelector('.sort-Btn').addEventListener('click', function() {
         let sortContext = new SortContext(SortFactory.createSortAlgorithm(currentSortAlgorithm));
         currentSort = sortContext.executeSort();
         sortBtn.disabled = true;
+        pauseBtn.disabled = false;
     } else { // if sorting (isSorting = true)
         shouldStop = true;
         currentSort.then(() => {

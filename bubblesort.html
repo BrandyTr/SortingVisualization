@@ -72,7 +72,7 @@
                 <!-- backward -->
                 <!-- <button class="backward-Btn" id="stepBackwardBtn"><i class="fa-solid fa-backward-step"></i></button> -->
                 <!-- pause/resume -->
-                <button class="pause-Btn"><i class="fa-solid fa-play"></i></button>
+                <button class="pause-Btn" id="pauseBtn"><i class="fa-solid fa-play"></i></button>
                 <!-- forward -->
                 <!-- <button class="forward-Btn" id="stepForwardBtn"><i class="fa-solid fa-forward-step"></i></button> -->
                 <br>
@@ -175,15 +175,20 @@
             <div id="code-part">
                 <div class="tab">
                     <button id="first-tab-link" class="tab-link active" onclick="showCode('c', this)"><img src="/assets/img/C_Logo.png" alt="C"></button>
+                    <button class="tab-link" onclick="showCode('c++', this)"><img src="/assets/img/c++.png" alt="C++"></button>
                     <button class="tab-link" onclick="showCode('java', this)"><img src="/assets/img/Java-Logo.png" alt="Java"></button>
+                    <button class="tab-link" onclick="showCode('cs', this)"><img src="/assets/img/cs.png" alt="C#"></button>
+                    <button class="tab-link" onclick="showCode('python', this)"><img src="/assets/img/python.png" alt="Python"></button>
+                    <button class="tab-link" onclick="showCode('php', this)"><img id="php-img" src="/assets/img/php.png" alt="PHP"></button>
+
+                    
                 </div>
         
                 <div class="code-container">
                     <!-- C language -->
                     <div id="code-C">
                         <pre id="c" class="code-block active">
-void swap(int* xp, int* yp)
-{
+void swap(int* xp, int* yp) {
     int temp = *xp;
     *xp = *yp;
     *yp = temp;
@@ -209,6 +214,28 @@ void bubbleSort(int arr[], int n) {
                         </pre>
                     </div>
         
+                    <!-- C++ language -->
+                    <div id="code-C++">
+                        <pre id="c++" class="code-block">
+void bubbleSort(int arr[], int n) {
+    int i, j;
+    bool swapped;
+    for (i = 0; i < n - 1; i++) {
+        swapped = false;
+        for (j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                swap(arr[j], arr[j + 1]);
+                swapped = true;
+            }
+        }
+
+        if (swapped == false)
+            break;
+    }
+}
+                        </pre>
+                    </div>
+
                     <!-- Java language -->
                     <div id="code-Java">
                         <pre id="java" class="code-block">
@@ -234,7 +261,78 @@ void bubbleSort(int arr[], int n) {
 }
                         </pre>
                     </div>
-    
+
+                    <!-- C# language -->
+                    <div id="code-Cs">
+                        <pre id="cs" class="code-block">
+static void bubbleSort(int[] arr, int n) {
+    int i, j, temp;
+    bool swapped;
+    for (i = 0; i < n - 1; i++) {
+        swapped = false;
+        for (j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                
+                temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+                swapped = true;
+            }
+        }
+
+        if (swapped == false)
+            break;
+    }
+}
+                        </pre>
+                    </div>
+
+                    <!-- Pyhton language -->
+                    <div id="code-Python">
+                        <pre id="python" class="code-block">
+def bubbleSort(arr):
+    n = len(arr)
+
+    for i in range(n):
+        swapped = False
+
+        for j in range(0, n-i-1):
+                            
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+                swapped = True
+        if (swapped == False):
+            break
+                        </pre>
+                    </div>
+
+                    <!-- PHP language -->
+                    <div id="code-PHP">
+                        <pre id="php" class="code-block">
+function bubbleSort(&$arr) {
+    $n = sizeof($arr);
+
+    for($i = 0; $i < $n; $i++) {
+        $swapped = False;
+
+        for ($j = 0; $j < $n - $i - 1; $j++) {
+            
+            if ($arr[$j] > $arr[$j+1]) {
+                $t = $arr[$j];
+                $arr[$j] = $arr[$j+1];
+                $arr[$j+1] = $t;
+                $swapped = True;
+            }
+        }
+
+        if ($swapped == False)
+            break;
+    }
+}
+                        </pre>
+                    </div>
+
+
                 </div>
             </div>
         </div>

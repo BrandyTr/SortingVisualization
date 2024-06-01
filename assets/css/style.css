@@ -266,7 +266,7 @@ button:disabled {
     background-color: gray !important;
     color: var(--nearly-white) !important;
     cursor: not-allowed !important;
-    opacity: 0.6; /* Thêm hiệu ứng mờ */
+    opacity: 0.6; 
 }
 
 /* Sort Button */
@@ -288,8 +288,8 @@ button:disabled {
 }
 
 .controls button:disabled:hover {
-    opacity: 0.6; /* Giữ nguyên độ mờ ban đầu */
-    cursor: not-allowed !important; /* Đảm bảo con trỏ không bị ghi đè */
+    opacity: 0.6; 
+    cursor: not-allowed !important;
 }
 
 .controls select {
@@ -488,6 +488,7 @@ button:disabled {
 #code-content-section .tab-link img {
     height: 40px;
 }
+
 
 #code-content-section .code-container {
     background-color: var(--nearly-black-blue);

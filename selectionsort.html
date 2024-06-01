@@ -68,7 +68,7 @@
             <!-- Control for sorting speed & block value -->
             <div class="controls">
                 <button class="sort-Btn" id="startSortBtn">Start Sorting</button>
-                <button class="pause-Btn"><i class="fa-solid fa-play"></i></button>
+                <button class="pause-Btn" id="pauseBtn"><i class="fa-solid fa-play"></i></button>
                 <br>
                 <button class="random-Btn" id="randomBtn">Random Values</button>
                 <label for="speed">Sort Speed:</label>
@@ -165,7 +165,11 @@
             <div id="code-part">
                 <div class="tab">
                     <button id="first-tab-link" class="tab-link active" onclick="showCode('c', this)"><img src="/assets/img/C_Logo.png" alt="C"></button>
+                    <button class="tab-link" onclick="showCode('c++', this)"><img src="/assets/img/c++.png" alt="C++"></button>
                     <button class="tab-link" onclick="showCode('java', this)"><img src="/assets/img/Java-Logo.png" alt="Java"></button>
+                    <button class="tab-link" onclick="showCode('cs', this)"><img src="/assets/img/cs.png" alt="C#"></button>
+                    <button class="tab-link" onclick="showCode('python', this)"><img src="/assets/img/python.png" alt="Python"></button>
+                    <button class="tab-link" onclick="showCode('php', this)"><img id="php-img" src="/assets/img/php.png" alt="PHP"></button>
                 </div>
         
                 <div class="code-container">
@@ -195,7 +199,28 @@ void selectionSort(int arr[], int n) {
 }
                         </pre>
                     </div>
-        
+
+                    <!-- C++ language -->
+                    <div id="code-C++">
+                        <pre id="c++" class="code-block">
+void selectionSort(int arr[], int n) {
+    int i, j, min_idx;
+
+    for (i = 0; i < n - 1; i++) {
+
+        min_idx = i;
+        for (j = i + 1; j < n; j++) {
+            if (arr[j] < arr[min_idx])
+                min_idx = j;
+        }
+
+        if (min_idx != i)
+            swap(arr[min_idx], arr[i]);
+    }
+}
+                        </pre>
+                    </div>
+
                     <!-- Java language -->
                     <div id="code-Java">
                         <pre id="java" class="code-block">
@@ -215,6 +240,65 @@ void selectionSort(int arr[]) {
         arr[i] = temp;
     }
 }
+                        </pre>
+                    </div>
+
+                    <!-- C# language -->
+                    <div id="code-Cs">
+                        <pre id="cs" class="code-block">
+static void sort(int []arr) {
+    int n = arr.Length;
+
+    for (int i = 0; i < n - 1; i++) {
+
+        int min_idx = i;
+        for (int j = i + 1; j < n; j++)
+            if (arr[j] < arr[min_idx])
+                min_idx = j;
+        
+        int temp = arr[min_idx];
+        arr[min_idx] = arr[i];
+        arr[i] = temp;
+    }
+}
+                        </pre>
+                    </div>
+
+                    <!-- Python language -->
+                    <div id="code-Python">
+                        <pre id="python" class="code-block">
+for i in range(len(A)-1):
+    
+    min_idx = i
+    for j in range(i+1, len(A)):
+        if A[min_idx] > A[j]:
+            min_idx = j
+                    
+    A[i], A[min_idx] = A[min_idx], A[i]
+                        </pre>
+                    </div>
+
+                    <!-- PHP language -->
+                    <div id="code-PHP">
+                        <pre id="php" class="code-block">
+function selection_sort(&$arr, $n) {
+    for($i = 0; $i < $n ; $i++) {
+        $low = $i;
+
+        for($j = $i + 1; $j < $n ; $j++) {
+            if ($arr[$j] < $arr[$low]) {
+                $low = $j;
+            }
+        }
+        
+        if ($arr[$i] > $arr[$low]) {
+            $tmp = $arr[$i];
+            $arr[$i] = $arr[$low];
+            $arr[$low] = $tmp;
+        }
+    }
+}
+                            
                         </pre>
                     </div>
     
