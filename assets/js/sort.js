@@ -7,6 +7,10 @@ var sortBtn = document.getElementById("startSortBtn");
 var randomBtn = document.getElementById("randomBtn");
 var pauseBtn = document.getElementById("pauseBtn");
 
+// restart sorting
+var restartBtn = document.getElementById("restartSortBtn");
+var initialBlocks = [] // initial blocks before sorting
+
 // // forward and backward button
 // var backwardBtn = document.getElementById("stepBackwardBtn");
 // var forwardBtn = document.getElementById("stepForwardBtn");
@@ -16,7 +20,6 @@ var isSorting = false;
 
 // sort current sorting
 var currentSort = null;
-
 // stop sorting
 var shouldStop = false; // true = stop, false = continue
 
@@ -26,6 +29,7 @@ var isPaused = false; // true = pause, false = continue
 // Generate the array of block
 function generateArray() {
     container.innerHTML = '';
+    initialBlocks = []; // clear initial blocks
 
     for (var i = 0; i < 20; i++) {
         var value = Math.ceil(Math.random() * 100);
@@ -48,6 +52,9 @@ function generateArray() {
 
         array_ele.appendChild(array_ele_label); // Append label to div
         container.appendChild(array_ele);
+
+        // save the initial blocks
+        initialBlocks.push({value: value, height: array_ele.style.height, transform: array_ele.style.transform});
     }
 
     clearSelectedElementMessage();
@@ -56,6 +63,33 @@ function generateArray() {
     sortBtn.disabled = false; // enable start button
     updatePauseBtn();
     pauseBtn.disabled = true;
+    restartBtn.disabled = true;
+}
+
+// reset Blocks
+function resetBlocks() {
+    container.innerHTML = '';
+    initialBlocks.forEach((block, i) => {
+        var array_ele = document.createElement("div");
+        array_ele.classList.add("block");
+
+        array_ele.style.height = block.height;
+        array_ele.style.transform = block.transform; 
+        
+        var array_ele_label = document.createElement("label");
+        array_ele_label.classList.add("block_id");
+        array_ele_label.innerText = block.value;
+        array_ele.appendChild(array_ele_label); // Append label to div
+        container.appendChild(array_ele);
+    });
+
+    clearSelectedElementMessage();
+    isSorting = false;
+    currentSort = null;
+    sortBtn.disabled = false; // enable start button
+    updatePauseBtn();
+    pauseBtn.disabled = true;
+    restartBtn.disabled = true;
 }
 
 // Swap 2 blocks
@@ -152,6 +186,7 @@ document.querySelector('.sort-Btn').addEventListener('click', function() {
         currentSort = sortContext.executeSort();
         sortBtn.disabled = true;
         pauseBtn.disabled = false;
+        restartBtn.disabled = false;
     } else { // if sorting (isSorting = true)
         shouldStop = true;
         currentSort.then(() => {
@@ -188,6 +223,20 @@ randomBtn.addEventListener('click', async function() {
     }
 });
 
+// restart sorting
+restartBtn.addEventListener('click', async function() {
+    if (isSorting) {
+        shouldStop = true;
+        if (isPaused) {
+            resetBlocks();
+        } else {
+            await currentSort;
+            resetBlocks();
+        }
+    } else {
+        resetBlocks();
+    }
+});
 generateArray();
 
 // Content code
