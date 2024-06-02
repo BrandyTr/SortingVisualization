@@ -167,6 +167,12 @@ class SortStrategy {
             }, speed);
         });
     }
+
+    async checkStop() {
+        if(shouldStop) {
+            throw new Error("Stop sorting");
+        }
+    }
 }
 
 // Context for sorting strategy
@@ -176,7 +182,16 @@ class SortContext {
     }
 
     async executeSort() {
-        return await this.strategy.sort();
+        try {
+            await this.strategy.sort();
+        }
+        catch (error) {
+            if (error.message !== "Stop sorting") {
+                console.error(error);
+            } else {
+                throw error;
+            }
+        }
     }
 }
 
@@ -247,8 +262,8 @@ randomBtn.addEventListener('click', async function() {
 
 // restart sorting
 restartBtn.addEventListener('click', async function() {
+    shouldStop = true;
     if (isSorting) {
-        shouldStop = true;
         if (isPaused) {
             resetBlocks();
         } else {
