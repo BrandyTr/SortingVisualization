@@ -1,3 +1,178 @@
+@media screen and (max-width: 501px) {
+    /* Sorting part */
+    .array {
+        /* display: flex;
+        justify-items: center;
+        align-items: center; */
+        margin-left: auto;
+        margin-right: auto;
+        height: 250px;
+        width: calc(16px*20 + 2px*19);
+        position: relative;
+        
+    }
+    
+    .block {
+        width: 16px;
+        background-color: var(--sky-blue);
+        position: absolute;
+        bottom: 0;
+        transition: 0.2s all ease;
+    }
+    
+    .block_id {
+        position: absolute;
+        color: var(--nearly-black-blue);
+        opacity: 0.95;
+        font-size: 9px;
+        margin-top: -15px;
+        width: 100%;
+        text-align: center;
+    }
+    
+    #sort-section h3 {
+        display: flex;
+        font-family: 'Montserrat';
+        margin-top: 10px;
+        font-size: 14px;
+        padding: 7px 10px;
+        font-weight: 600;
+        background-color: var(--black-blue);
+        color: var(--nearly-white);
+        border-radius: 5px;
+        letter-spacing: 0.5px;
+    }
+
+    /* Sorting button */
+    .controls button {
+        background-color: var(--button-sort);
+        color: var(--black-blue);
+        border: none;
+        padding: 6px 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 8px 3px;
+        font-weight: 600;
+    }
+
+    .controls select {
+        padding: 6px 10px;
+        font-size: 16px;
+        cursor: pointer;
+        margin: 10px 0;
+    }
+
+    .controls label {
+        padding: 6px 10px;
+        padding-right: 0;
+        font-size: 16px;
+        margin-right: 0;
+        font-weight: 600;
+    }
+
+    /* description */
+    #content_sorting p,
+    #content_sorting ul {
+        font-size: 12px;
+    }
+    /* Cons & Pros */
+    .description_sort table {
+        width: 100%;
+    }
+
+    .description_sort th {
+        padding: 7px;
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+    }
+
+    .description_sort ul {
+        padding-left: 15px;
+    }
+
+    /* Complexity */
+    #content_sorting table {
+        font-size: 16px;
+    }
+    /* implemetation */
+    #code-content-section .tab-link {
+        background: var(--light-blue);
+        border: 2px solid var(--orange);
+        /* border-bottom: none; */
+        /* border-radius: 15px 15px 0 0; */
+        width: 55px;
+        cursor: pointer;
+        padding: 5px 10px;
+        margin-bottom: -1.5px;
+        margin-left: -3px;
+    
+        opacity: 0.9;
+        transition: opacity 0.3s;
+    }
+
+    #code-content-section .tab-link img:hover {
+        transform: scale(1.1);
+    }
+
+    #code-content-section .tab-link img {
+        height: 30px;
+    }
+
+    #code-content-section .code-container {
+        background-color: var(--nearly-black-blue);
+        border: 2px solid var(--orange);
+        text-align: left;
+        padding: 20px 10px;
+        display: none;
+    }
+
+    #code-content-section .code-block {
+        display: none;
+        color: #fbfbfb;
+        padding: 0;
+        margin: 0;
+        font-size: 10px;
+        font-family: 'Courier New', Courier, monospace;
+    
+    }
+
+
+}
+
+@media (min-width: 501px) and (max-width: 700px) {
+    /* Sorting part */
+    .array {
+        /* display: flex;
+        justify-items: center;
+        align-items: center; */
+        margin-left: auto;
+        margin-right: auto;
+        height: 375px;
+        width: calc(22px * 20 + 2px*19);
+        position: relative;
+        
+    }
+    
+    .block {
+        width: 22px;
+        background-color: var(--sky-blue);
+        position: absolute;
+        bottom: 0;
+        transition: 0.2s all ease;
+    }
+    
+    .block_id {
+        position: absolute;
+        color: var(--nearly-black-blue);
+        opacity: 0.95;
+        font-size: 12px;
+        margin-top: -18px;
+        width: 100%;
+        text-align: center;
+    }
+}
 @media screen and (max-width: 768px) {
     #header-text h1 {
         font-size: 2.5rem;

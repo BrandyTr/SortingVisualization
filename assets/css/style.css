@@ -25,7 +25,7 @@
 .navbar .container {
     justify-content: space-between;
     height: 64px;
-    margin: 0 3rem;
+    margin: 0;
 }
 
 .site-brand {

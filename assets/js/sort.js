@@ -26,10 +26,32 @@ var shouldStop = false; // true = stop, false = continue
 // Pause sorting
 var isPaused = false; // true = pause, false = continue
 
+
+function getTranslationDistance() {
+    if (window.innerWidth <= 500) {
+        return 18;
+    } else if (window.innerWidth > 500 && window.innerWidth <= 700) {
+        return 24;
+    } else if (window.innerWidth > 700) {
+        return 33;
+    }
+}
+
+function getTranslationHeight() {
+    if (window.innerWidth <= 500) {
+        return 2;
+    } else {
+        return 3;
+    }
+}
+
 // Generate the array of block
 function generateArray() {
     container.innerHTML = '';
     initialBlocks = []; // clear initial blocks
+
+    const translationDistance = getTranslationDistance();
+    const translationHeight = getTranslationHeight();
 
     for (var i = 0; i < 20; i++) {
         var value = Math.ceil(Math.random() * 100);
@@ -41,8 +63,8 @@ function generateArray() {
         array_ele.classList.add("block");
 
         // Adding style to div
-        array_ele.style.height = `${value * 3}px`;
-        array_ele.style.transform = `translate(${i * 33}px)`; // Translate the element
+        array_ele.style.height = `${value * translationHeight}px`;
+        array_ele.style.transform = `translate(${i * translationDistance}px)`; // Translate the element
 
         // Create label in front of block
         var array_ele_label = document.createElement("label");
@@ -237,6 +259,13 @@ restartBtn.addEventListener('click', async function() {
         resetBlocks();
     }
 });
+
+window.addEventListener('resize', function() {
+    if (!isSorting) {
+        generateArray();
+    }
+})
+
 generateArray();
 
 // Content code
