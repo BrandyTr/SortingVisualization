@@ -33,7 +33,7 @@ class BubbleSort extends SortStrategy {
                 var value2 = Number(blocks[j+1].childNodes[0].innerHTML)    
         
                 if (value1 > value2) {
-                    await swap(blocks[j], blocks[j + 1]);
+                    await this.swap(blocks[j], blocks[j + 1]);
                     blocks = document.querySelectorAll(".block");
                     
                 }
@@ -48,6 +48,23 @@ class BubbleSort extends SortStrategy {
         currentSort = null;
         updatePauseBtn();
 
+    }
+
+    async swap(ele1, ele2) {
+        return new Promise((resolve) => {
+            var temp = ele1.style.transform;
+            ele1.style.transform = ele2.style.transform;
+            ele2.style.transform = temp;
+    
+            // wait for the transition to end!
+            window.requestAnimationFrame(function() {
+                setTimeout(() => {
+                    // insert ele2 before ele1 in DOM (container)
+                    container.insertBefore(ele2, ele1);
+                    resolve();
+                }, 250)
+            })
+        })
     }
 }
 

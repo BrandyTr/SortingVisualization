@@ -114,23 +114,6 @@ function resetBlocks() {
     restartBtn.disabled = true;
 }
 
-// Swap 2 blocks
-function swap(ele1, ele2) {
-    return new Promise((resolve) => {
-        var temp = ele1.style.transform;
-        ele1.style.transform = ele2.style.transform;
-        ele2.style.transform = temp;
-
-        // wait for the transition to end!
-        window.requestAnimationFrame(function() {
-            setTimeout(() => {
-                // insert ele2 before ele1 in DOM (container)
-                container.insertBefore(ele2, ele1);
-                resolve();
-            }, 250)
-        })
-    })
-}
 
 // clear message "element selected"
 function clearSelectedElementMessage() {
