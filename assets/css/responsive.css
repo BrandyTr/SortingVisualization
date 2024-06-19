@@ -1,4 +1,9 @@
 @media screen and (max-width: 501px) {
+    #header-text h2 {
+        font-size: 0.7em;
+        width: 100%;
+    }
+
     /* Sorting part */
     .array {
         /* display: flex;
