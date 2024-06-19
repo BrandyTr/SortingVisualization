@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sorting Visualizer</title>
+    <title>Sorting Visualization</title>
+    <link rel="icon" href="/assets/img/logo.png" type="icon">
 
     <!-- font awesome cdn: for icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
@@ -20,13 +21,73 @@
     <link rel="stylesheet" href="./assets/css/utility.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/responsive.css">
+
+    <style>
+        #first-header, #second-header {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(40px);
+            animation: animationFadeIn 1.5s forwards;
+        }
+
+        @keyframes animationFadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .typewriter {
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 0.15em solid black;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+
+        #welcome-header {
+            display: none;
+        }
+
+        @keyframes typing {
+            from { 
+                width: 0; 
+            }
+            
+            to {
+                width: 100%; 
+            }
+        }
+
+        @keyframes blink-caret {
+            from, to {
+                border-color: transparent; 
+            }
+
+            50% {
+                border-color: black; 
+            }
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let welcomeHeader = document.getElementById('welcome-header');
+            
+            setTimeout(() => {
+                welcomeHeader.style.display = 'inline-block';
+                welcomeHeader.classList.add('typewriter');
+            }, 1800);
+        });
+    </script>
+
 </head>
 <body>
     <!-- NAV BAR -->
     <nav class="navbar">
         <div class="container flex">
             <a href="index.html" class="site-brand">
-                Sorting<span>Visualizer</span>
+                Sorting<span>Visualization</span>
             </a>
 
             <!-- Button SV -->
@@ -60,8 +121,9 @@
         <div id="header-text">
             <h1><span id="first-header">Sorting</span>
                 <br>
-                <span id="second-header">Visualizer</span>
+                <span id="second-header">Visualization</span>
             </h1>
+            <h2 id="welcome-header">Welcome to Data Structures and Algorithms Interaction!</h2>
         </div>
     </header>
     <!-- END HEADER -->
