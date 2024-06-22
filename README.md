@@ -43,8 +43,8 @@
 
 ## 5. Details About the Project🛠️
 
-- Detailed report: https://bit.ly/ReportDreamyLand
-- Website introduction & demo: https://bit.ly/DreamyLandPlayingDemo
+- Detailed report: 
+- Website introduction & demo: https://youtu.be/RrdVq0gTsNE
 
 ## 6. Author👥
 - [@BrandyTr](https://github.com/BrandyTr)
