@@ -41,5 +41,12 @@
 - Selection Sort
 - Insertion Sort
 
+## 5. Details About the Project🛠️
+
+- Detailed report: https://bit.ly/ReportDreamyLand
+- Website introduction & demo: https://bit.ly/DreamyLandPlayingDemo
+
+## 6. Author👥
+- [@BrandyTr](https://github.com/BrandyTr)
 
  
