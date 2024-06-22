@@ -1,6 +1,6 @@
 # Sorting Visualization Website (SVW)
 
-[Sorting Visualization Website](https://sortingvisualization-dsa-interaction.vercel.app/) ![alt text](http://url/to/img.png)
+[Sorting Visualization Website](https://sortingvisualization-dsa-interaction.vercel.app/) 
 
 ## 1. Objectives 🌐
 📊Sorting Visualizer Website💻 (SVW) is a responsive multi-page website for sorting visualization, using interactive web technologies (HTML, CSS, JS) to explain sorting algorithms in data structures.
