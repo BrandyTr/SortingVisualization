@@ -43,7 +43,7 @@
 
 ## 5. Details About the Project🛠️
 
-- Detailed report: 
+- Detailed report: https://bit.ly/SortingVisualization_Report
 - Website introduction & demo: https://youtu.be/RrdVq0gTsNE
 
 ## 6. Author👥
